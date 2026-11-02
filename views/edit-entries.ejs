@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <h1>Edit journal</h1>
+     <form action="/entries/<%= entries._id %>?_method=PUT" method="post">
+      <label for="title">title:</label>
+      <input value="<%= entries.title %>" type="text" name="title" id="title" />
+      <label for="entryBody">Text:</label>
+      <input value= "<%= entries.entryBody %>" type="text" name="entryBody" id="entryBody" />
+      <label for="isPublic">is Public?</label>
+      <input <% if(entries.isPublic){ %> checked <% } %> type="checkbox" name="isPublic" id="isPublic"/>
+      <button type="submit">Edit</button>
+    </form>
+</body>
+</html>
