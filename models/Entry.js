@@ -4,11 +4,11 @@ const entrySchema =  new mongoose.Schema({
     title:{
         type: String,
         required: true,
-        maxLength:100
+        max:100
     },
     entryBody:{
         type:String,
-        maxLength:350
+        max:350
     },
     isPublic:{
         type:Boolean,
